@@ -19,7 +19,7 @@ function get(url, cb) {
 }
 
 module.exports = function (name, version, cb) {
-	var url = registryUrl(name.split('/')[0]) + name + '/';
+	var url = registryUrl(name.split('/')[0]) + '/' + encodeURIComponent(name) + '/';
 
 	if (typeof version !== 'string') {
 		cb = version;
